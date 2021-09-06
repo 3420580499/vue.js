@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*第一种写法*/
+  /*new Promise((resolve, reject) => {
+    setTimeout(() =>{
+      //从这里跳到then
+      resolve("hello")
+      //跳转到catch
+      reject("error")
+    },10000)
+  }).then((data) =>{
+    console.log(data);
+  }).catch((error)=>{
+    console.log(error);
+  })*/
+
+/*第二种写法*/
+  new Promise((resolve, reject) => {
+    setTimeout(() =>{
+      //从这里跳到then
+      resolve("hello")
+      //跳转到catch
+      reject("error")
+    },10000)
+  }).then((data) =>{
+    console.log(data);
+  },(error)=>{
+    console.log(error);
+  })
+</script>
+</body>
+</html>

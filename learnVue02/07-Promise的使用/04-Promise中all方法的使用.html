@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+Promise.all([
+      new Promise((resolve,reject) =>{
+        setTimeout(() =>{
+          resolve("第一步")
+        },2000)
+      }),
+      new Promise((resolve,reject) =>{
+        setTimeout(() =>{
+          resolve("第一步")
+        },2000)
+      })
+]).then((result) =>{
+  console.log(result);
+})
+</script>
+</body>
+</html>

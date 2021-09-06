@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*new Promise((resolve, reject) => {
+    setTimeout(() =>{
+      //从这里跳到then
+      resolve("hello")
+    },2000)
+  }).then((data) =>{
+    console.log(data)
+    return new Promise((resolve) => {
+        resolve( data+"1111")
+    })
+  }).then((data) =>{
+    console.log(data)
+    return new Promise((resolve) => {
+      resolve( data+"2222")
+    })
+  }).then(data =>{
+    console.log(data);
+  })*/
+
+/*  new Promise((resolve, reject) => {
+    setTimeout(() =>{
+      //从这里跳到then
+      resolve("hello")
+    },2000)
+  }).then((data) =>{
+    console.log(data)
+    return Promise. resolve( data+"1111")
+  }).then((data) =>{
+    console.log(data)
+    return Promise. resolve( data+"2222")
+  }).then(data =>{
+    console.log(data);
+  })*/
+
+ /* new Promise((resolve, reject) => {
+    setTimeout(() =>{
+      //从这里跳到then
+      resolve("hello")
+    },2000)
+  }).then((data) =>{
+    console.log(data)
+    return ( data+"1111")
+  }).then((data) =>{
+    console.log(data)
+    return ( data+"2222")
+  }).then(data =>{
+    console.log(data);
+  })*/
+
+  new Promise((resolve, reject) => {
+    setTimeout(() =>{
+      //从这里跳到then
+      resolve("hello")
+    },2000)
+  }).then((data) =>{
+    console.log(data)
+    return Promise. resolve( data+"1111")
+  }).then((data) =>{
+    console.log(data)
+    return Promise. reject("error message")
+    //throw "error message"
+  }).then(data =>{
+    console.log(data);
+  }).catch((error) =>{
+    console.log(error);
+  })
+</script>
+</body>
+</html>

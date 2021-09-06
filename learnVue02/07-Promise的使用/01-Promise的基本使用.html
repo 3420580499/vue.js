@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*用Promise处理异步操作*/
+ /* new Promise((resolve, reject) => {
+    setTimeout(() =>{
+      console.log("hello")
+    },10000)
+  })*/
+
+ /* new Promise((resolve, reject) => {
+    setTimeout(() =>{
+      //从这里跳到then
+      resolve("hello")
+    },10000)
+  }).then((data) =>{
+    console.log(data);
+  })*/
+
+/*new Promise((resolve,reject) =>{
+  setTimeout(() =>{
+    /!*从这里跳到catch*!/
+    reject("错误")
+  },1000)
+}).catch((data) =>{
+  console.log(data);
+})*/
+
+  new Promise((resolve, reject) => {
+    setTimeout(() =>{
+      //从这里跳到then
+      resolve("hello")
+    },2000)
+  }).then((data) =>{
+    console.log(data)
+    return new Promise((resolve, reject) => {
+      setTimeout(() =>{
+        //从这里跳到then
+        resolve("hello")
+      },2000)
+    })
+  }).then((data) =>{
+    console.log(data)
+    return new Promise((resolve, reject) => {
+      setTimeout(() =>{
+        //从这里跳到then
+        resolve("hello")
+      },2000)
+    })
+  }).then((data) =>{
+    console.log(data)
+    return new Promise((resolve, reject) => {
+      setTimeout(() =>{
+        //从这里跳到then
+        resolve("hello")
+      },2000)
+    })
+  })
+</script>
+</body>
+</html>
