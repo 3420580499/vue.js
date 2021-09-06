@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--使用自定义函数-->
+<div id="app">
+  <cnv @throwclick="view"></cnv>
+</div>
+<template id="one">
+  <div>
+   <button v-for="item in games" @click="cnvClick(item)">{{item.name}}</button>
+  </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+  const cnv = {
+    template:"#one",
+    data(){
+      return{
+        games:[
+               {name:"荒野大镖客",price:96 },
+               {name:"血源诅咒",price:44 },
+               {name:"apex",price:0 },
+              ]
+      }
+    },
+    methods:{
+      cnvClick(item){
+        //在此发射事件(触发事件)
+        //字母c还不能大写>_<
+        this.$emit("throwclick",item)
+      }
+    }
+
+  }
+  const vm = new Vue({
+      el:"#app",
+      data:{
+        message:"hello vue"
+      },
+      components:{
+        "cnv":cnv
+      },
+      methods:{
+         view(item){
+           console.log(item)
+         }
+      }
+  })
+</script>
+</body>
+</html>

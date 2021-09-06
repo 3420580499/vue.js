@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <font :style="{fontSize:finalSize,color:finalColor}">{{message}}</font>
+  <!--200px必须加上引号(否则vue会识别为变量)-->
+  <!--对象的key可以不使用引号,但value必须使用引号-->
+  <!--如果觉得style太长了,可以用作方法的返回-->
+  <font :style="{fontSize:'200px',color:finalColor}">{{message}}</font>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        message:"hello vue",
+        finalSize:"100px",
+        finalColor:"red"
+      }
+  })
+</script>
+</body>
+</html>

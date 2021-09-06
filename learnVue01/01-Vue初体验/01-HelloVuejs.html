@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+</div>
+<!--script+tab可直接-->
+<!--跳转上一级目录-->
+<script src="../js/vue.js"></script>
+<script>
+  //let(变量),const(常量)
+  //编程范式:声明式编程
+  const vm= new Vue({
+      el:"#app",//用于挂载要管理的元素
+      data:{ //定义数据
+        message:"hello vue"
+      }
+  })
+</script>
+</body>
+</html>

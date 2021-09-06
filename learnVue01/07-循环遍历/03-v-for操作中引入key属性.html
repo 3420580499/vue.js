@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <!--为什么写:key="item",如果插入数据E到c和d中间,写这个的话可以提升性能-->
+    <!--不写:key="index"的原因:index不具有唯一性,写了没什么意义,提升不了性能-->
+    <li v-for="item in nums" :key="item">{{item}}</li>
+  </ul>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        message:"hello vue",
+        nums:["A","B","C","D"]
+      }
+  })
+</script>
+</body>
+</html>

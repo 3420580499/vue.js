@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{fullName}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+       firstName:"Hello",
+        lastName:"Vue"
+      },
+    computed:{
+        //这样写相当于没有写set方法,叫做只读属性
+        /*fullName:function(){
+          return this.firstName + this.lastName;
+        }*/
+      fullName:{
+        get(){
+          alert("get方法执行了")
+          return this.firstName + this.lastName;
+        },
+        set(newValue){
+          alert("set方法执行了")
+          const name = newValue.split(" ")
+          this.firstName = name[0]
+          this.lastName = name[1]
+          //这样写,fullName不会变,因为fullName=firstName+lastName
+          //this.fullName = newValue
+        }
+      }
+    }
+  })
+</script>
+</body>
+</html>

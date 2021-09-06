@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!--1.lazy延迟加载-->
+  <input type="text" v-model.lazy="message">{{message}}
+  <!--2.number保证类型为数字-->
+  <input type="number" v-model.number="age">{{typeof age}}
+  <!--3.trim去除前后空格-->
+  <input type="text" v-model.trim="age">{{age}}
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        message:"hello vue",
+        age:9
+      }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!--不能写src="{{pictureUrl}}",会直接识别为字符串-->
+  <img :src="pictureUrl" alt="找不到图片">
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        pictureUrl:"../picture/picture01.png"
+      }
+  })
+</script>
+</body>
+</html>

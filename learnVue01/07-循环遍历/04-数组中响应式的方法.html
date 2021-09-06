@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--响应式:操作数据改变后,视图会发生改变-->
+<div id="app">
+  <ul>
+    <li v-for="item in nums">{{item}}</li>
+  </ul>
+  <button @click="test">方法按钮</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        nums:["a","b","c","d"]
+      },
+      methods:{
+        test(){
+          /*
+          * 1.push(数组最后添加一个元素)
+          * 2.pop
+          * 3.shift
+          * 4.unshift
+          * 5.splice
+          * 6.sort(排序)
+          * 7.reverse(逆转数组)
+          * */
+          /*这样写视图不变,因为不是响应式*/
+          /*this.nums[0]="aaa";*/
+          /*这样才行*/
+          this.nums.splice(0,1,"aaa");
+          /*或者这样*/
+          /*Vue.set(this.nums,0,"aaa")*/
+        }
+      }
+  })
+</script>
+</body>
+</html>

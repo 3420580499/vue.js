@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cnv></cnv>
+  <cnw></cnw>
+</div>
+<!--分离写法一-->
+<template id="one">
+  <div>
+    <h2>分离写法一</h2>
+  </div>
+</template>
+<!--分离写法二-->
+<script type="text/x-template" id="two">
+  <div>
+    <h2>分离写法二</h2>
+  </div>
+</script>
+<script src="../js/vue.js"></script>
+<script>
+  /*全局组件(局部组件也可以这样写)*/
+  Vue.component("cnv",
+      {template:"#one"}
+  )
+  Vue.component("cnw",
+      {template:"#two"}
+  )
+  const vm= new Vue({
+    el:"#app",
+    data:{
+      message:"hello vue"
+    }
+  })
+</script>
+</body>
+</html>

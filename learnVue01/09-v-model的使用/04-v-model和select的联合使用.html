@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <label for="ini">兴趣</label>
+  <!--支持多选-->
+  <select name="like" id="ini"  v-model="likes" multiple>
+    <option value="篮球">篮球</option>
+    <option value="足球">足球</option>
+    <option value="高尔夫球">高尔夫球</option>
+    <option value="排球">排球</option>
+  </select>
+  兴趣:{{likes}}
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+         likes:[]
+      }
+  })
+</script>
+</body>
+</html>

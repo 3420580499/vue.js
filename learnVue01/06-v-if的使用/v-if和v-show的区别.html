@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!--v-if会在DOM中删除这个标签-->
+  <h3 v-if=boolean>{{message}}</h3>
+ <!-- v-show就是在其中加了一个样式style="display: none"-->
+  <h3 v-show=boolean >{{message}}</h3>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        message:"hello vue",
+        boolean:true
+      }
+  })
+</script>
+</body>
+</html>

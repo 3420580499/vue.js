@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <my-com2></my-com2>
+  <!--<my-com1></my-com1>-->
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  /*子组件*/
+  const com1 = Vue.extend({
+    template:`
+             <div>
+             <h2>标题一</h2>
+             </div>
+             `
+  })
+  /*父组件*/
+  const com2 = Vue.extend({
+    /* template下面只能有一个子标签,可以使用一个div标签包裹起来*/
+    template:`
+             <div>
+             <h2>标题二</h2>
+             <my-com1></my-com1>
+             </div>
+             `,
+    components:{
+      "my-com1":com1
+    }
+  })
+  /*root组件(根组件*/
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        message:"hello vue"
+      },
+      components:{
+        "my-com2":com2,
+       /* "my-com1":com1*/
+      }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h2>总价格:{{allPrice1}}</h2>
+  <h2>总价格:{{allPrice2}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        games:[
+          {name:"荒野大镖客",price:298},
+          {name:"盗贼之海",price:116},
+          {name:"呼吸边缘",price:81},
+          {name:"石油大亨",price:24}
+        ]
+      },
+    computed:{
+        allPrice1:function(){
+          let allMoney = 0;
+          /*es6的新语法
+          * 还有for(let i in this.games),i是下标
+          * */
+          for(let game of this.games){
+             allMoney +=game.price;
+          }
+          return allMoney
+        },
+        allPrice2:function(){
+            let allMoney = 0;
+            for(let i in this.games){
+               allMoney += this.games[i].price
+            }
+            return allMoney
+        }
+    }
+  })
+</script>
+</body>
+</html>

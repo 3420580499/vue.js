@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cnv></cnv>
+  <cnv ref="aaa"></cnv>
+  <button @click="btnClick">按钮</button>
+</div>
+<template id="one">
+  <div>我是子组件</div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        message:"hello vue",
+      },
+      methods:{
+        btnClick(){
+          //this.$children打印的是组件对象数组
+          console.log(this.$children);
+          this.$children[0].showMessage();
+          //$refs的方式更实用点
+          this.$refs.aaa.showMessage()
+        }
+      },
+      components:{
+        "cnv":{
+          template:"#one",
+          methods:{
+            showMessage(){
+              console.log("子组件里的方法被调用了");
+            }
+          }
+        }
+      }
+  })
+</script>
+</body>
+</html>

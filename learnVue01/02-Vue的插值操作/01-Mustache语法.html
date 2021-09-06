@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!--Mustache(双大括号)语法中不仅仅可以写变量,还可以写一些简单的表达式-->
+  <!--v-once作用是:修改model是view不会变化-->
+  <h1 v-once>{{firstName +' '+ lastName}}</h1>
+  {{firstName}}  {{lastName}}
+  {{count * 2}}
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        firstName:"Mike",
+        lastName:"Jackson",
+        count:2
+      }
+  })
+</script>
+</body>
+</html>

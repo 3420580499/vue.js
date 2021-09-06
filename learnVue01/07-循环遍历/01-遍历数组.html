@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <li v-for="(item,index) in games">{{index}}--{{item}}</li>
+  </ul>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        games:["生化变种","古墓丽影:崛起","最后的生还者2","腐烂国度"]
+      }
+  })
+</script>
+</body>
+</html>

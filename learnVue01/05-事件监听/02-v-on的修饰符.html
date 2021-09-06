@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!--停止事件冒泡-->
+  <div @click="outClick">
+    <font @click.stop="fontClick">文字</font>
+    <button @click.stop="buttonClick">按钮</button>
+  </div>
+
+  <!--阻止标签的默认行为-->
+  <a href="https://www.baidu.com" @click.prevent="baiduClick">百度</a>
+
+  <!--给事件绑定键值-->
+  <input type="text" @keyup.enter="keyClick">
+  <input type="text" @keyup.13="keyClick">
+
+  <!--事件只执行一次-->
+  <button @click.once="onceClick">单次按钮</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        message:"hello vue"
+      },
+    methods:{
+        keyClick(){
+          console.log("key值触发");
+        },
+        buttonClick(){
+          console.log("按钮点击");
+        },
+        fontClick(){
+          console.log("文字点击");
+        },
+        outClick(){
+          console.log("外部div点击");
+        },
+        baiduClick(){
+          console.log("百度点击");
+        },
+        onceClick(){
+          console.log("单次按钮");
+        }
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+ <cnv></cnv>
+</div>
+<template id="one">
+  <button @click="btnClick">按钮</button>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        message:"hello vue"
+      },
+      methods:{
+        showMessage(){
+          console.log("父组件的方法被调用了")
+        }
+      },
+      components:{
+       "cnv":{
+         template:"#one",
+         methods:{
+           btnClick(){
+             //返回的是一个Vue实例(该子组件的父组件就是Vue实例)
+             console.log(this.$parent);
+             this.$parent.showMessage();
+           }
+         }
+       }
+      }
+  })
+</script>
+</body>
+</html>

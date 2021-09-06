@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <label v-for="item in origin" :for="item">
+    <input type="checkbox" v-model="likes" :value="item" >{{item}}
+  </label>
+  {{likes}}
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        origin:["篮球","足球","排球","乒乓球","羽毛球"],
+        likes:[]
+      }
+  })
+</script>
+</body>
+</html>

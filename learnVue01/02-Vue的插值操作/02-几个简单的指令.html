@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!--v-html会将url中的html解析出来并渲染-->
+  <h2 v-html="url"></h2>
+
+  <!--v-text的使用-->
+  <h2 v-text="message">,小明</h2>
+  <h2 >{{message}},小明</h2>
+
+  <!--v-pre的使用(直接输出{{message}})-->
+  <h2 v-pre>{{message}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        url:'<a href="https://www.baidu.com">百度</a>',
+        message:'你好'
+      }
+  })
+</script>
+</body>
+</html>

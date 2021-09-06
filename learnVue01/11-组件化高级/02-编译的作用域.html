@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!--这里的isShow会使用Vue实例中的,因为该模板属于Vue实例-->
+  <!--而且父组件也不能直接访问子组件里的变量-->
+  <cnv v-show="isShow"></cnv>
+  <h2 v-show="isShow">显示出来了</h2>
+</div>
+<template id="one">
+  <!--在这里使用v-show就是会使用子组件里的变量-->
+  <div>我是子组件(显示出来了)</div
+</template>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        message:"hello vue",
+        isShow:true
+      },
+      components:{
+        "cnv":{
+          template:"#one",
+          data(){
+            return{
+              isShow:false
+            }
+          }
+        }
+      }
+  })
+</script>
+</body>
+</html>

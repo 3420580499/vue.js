@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn></cpn>
+  <cpn>
+    <template slot-scope="slot">
+      <span v-for="item in slot.data">{{item}}</span><br/>
+      <span>{{slot.data.join("-")}}</span>
+    </template>
+  </cpn>
+</div>
+<template id="one">
+  <div>
+    <slot :data="games">
+      <ul>
+        <li v-for="item in games">{{item}}</li>
+      </ul>
+    </slot>
+  </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        message:"hello vue"
+      },
+      components:{
+        "cpn":{
+          template:"#one",
+          data(){
+            return{
+              games:["荒野大镖客","盗贼之海","绝地求生","棉兰号"]
+            }
+          }
+        }
+      }
+  })
+</script>
+</body>
+</html>

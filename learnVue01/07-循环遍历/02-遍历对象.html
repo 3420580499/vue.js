@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <li v-for="item in game">{{item}}</li>
+    <!--value是属性值,key是属性名,index是下标-->
+    <li v-for="(value,key,index) in game">{{value}}--{{key}}--{{index}}</li>
+  </ul>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        game:{
+          name:"盗贼之海",
+          sale:116,
+          evaluate:"good"
+        }
+      }
+  })
+</script>
+</body>
+</html>

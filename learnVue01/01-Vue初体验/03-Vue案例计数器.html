@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  //语法糖:就是简写的意思
+  <h3>计数值:{{counter}} </h3> <br>
+  <button @click="counter++">+</button>
+  <button @click="sub">-</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm = new Vue({
+    el:"#app",
+    data:{
+      counter:0
+    },
+    methods:{
+      sub:function(){
+        this.counter--
+      }
+    }
+  })
+</script>
+</body>
+</html>

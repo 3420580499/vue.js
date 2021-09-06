@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!--没有参数时,方法不带括号和带括号(都是输出hello)-->
+  <button @click="test1()">按钮一</button>
+  <button @click="test1">按钮一</button>
+
+  <button @click="test2()">按钮二</button>
+  <!--此处会生成一个event事件对相关-->
+  <button @click="test2">按钮二</button>
+
+  <button @click="test3('name',$event)">按钮二</button>
+
+
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        message:"hello vue"
+      },
+    methods:{
+      test1(){
+        console.log("hello");
+        },
+      test2(name){
+        console.log(name);
+      },
+      test3(name,event){
+        console.log(name);
+        console.log(event);
+      }
+    }
+  })
+</script>
+</body>
+</html>

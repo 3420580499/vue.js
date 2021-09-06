@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cnv></cnv>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  /*全局组件(局部组件也可以这样写)*/
+  Vue.component("cnv",
+      {template:`
+             <div>
+             <h2>语法糖</h2>
+             </div>
+             `}
+  )
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        message:"hello vue"
+      }
+  })
+</script>
+</body>
+</html>

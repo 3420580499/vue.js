@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <span v-if="boolean">
+    <!--点了手机登录.输入框会获得光标-->
+    <label for="phone">手机登录</label >
+    <!--其中的key和下面的不一样(这里面写的就不会复用到下面的框中)-->
+    <input type="text" id="phone" key="aaa">
+  </span>
+  <span v-else>
+    <label for="qq">QQ登录</label>
+    <input type="text" id="qq" key="bbb">
+  </span>
+  <button @click="boolean = !boolean">登录切换</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const vm= new Vue({
+      el:"#app",
+      data:{
+        boolean :false
+      }
+  })
+</script>
+</body>
+</html>
